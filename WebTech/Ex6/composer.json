@@ -1,0 +1,6 @@
+{
+    "name": "deepakbhuvaneswaran/web-tech",
+    "require": {
+        "mongodb/mongodb": "^1.10"
+    }
+}

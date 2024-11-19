@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Mapping Example</title>
+</head>
+<body>
+
+    <!-- Image with mapping -->
+    <img src="wtl1.png" alt="Image Mapping Example" usemap="#image-map" width="600">
+
+    <!-- Image Map -->
+    <map name="image-map">
+        <!-- Rectangle for the book -->
+        <area shape="rect" coords="180,130,390,420" href="tasks.html" alt="Tasks" title="Tasks">
+        
+        <!-- Circle for the clock -->
+        <area shape="circle" coords="470,350,70" href="reminders.html" alt="Reminders" title="Reminders">
+        
+        <!-- Polygon for the pen -->
+        <area shape="poly" coords="140,130,140,138,130,175,130,390,140,430,145,430,145,390,145,174,140,130" href="quick-notes.html" alt="Quick Notes" title="Quick Notes">
+    </map>
+
+    <!-- Add some content for testing -->
+    <p>Links:</p>
+    <ul>
+        <li><a href="tasks.html">Tasks</a></li>
+        <li><a href="reminders.html">Reminders</a></li>
+        <li><a href="quick-notes.html">Quick Notes</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Organizer Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Internal CSS -->
+    <style>
+        h1, h2 {
+            font-weight: bold;
+        }
+        .text-primary {
+            color: #007bff !important;
+        }
+        .bg-light-custom {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#navbarNav">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Organizer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#advantages">Advantages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="container text-center mt-5 pt-5 mb-5">
+        <h1 class="display-4 text-primary">Personal Organizer Website</h1>
+        <p class="lead text-muted">Manage your tasks, appointments, and daily activities all in one place.</p>
+        <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="container mb-5">
+        <h2 class="text-secondary">Features</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">Task Management - Add, edit, and delete tasks with due dates and priorities.</li>
+                    <li class="list-group-item">Calendar Integration - Sync with Google Calendar for seamless scheduling.</li>
+                    <li class="list-group-item">Reminders & Notifications - Receive timely notifications for deadlines.</li>
+                    <li class="list-group-item">Notes Section - Write down important information for future reference.</li>
+                    <li class="list-group-item">Habit Tracker - Track and visualize habits for consistency in goals.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="pow.png" class="img-fluid rounded" alt="Organized desk">
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="container bg-light p-4 rounded mb-5">
+        <h2 class="text-secondary">Advantages of a Personal Organizer Website</h2>
+        <ul class="list-unstyled">
+            <li><i class="fas fa-check-circle text-success"></i> Centralized platform to manage tasks, appointments, and reminders.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Helps users stay organized and boosts productivity.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Accessible from any device with internet connectivity.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Customizable features to suit individual needs.</li>
+            <li><i class="fas fa-check-circle text-success"></i> Environmentally friendly by reducing paper usage.</li>
+        </ul>
+    </section>
+
+    <!-- Contact Us Section with Form Validation -->
+    <section id="contact" class="container mb-5">
+        <h2 class="text-secondary">Contact Us</h2>
+        <p>If you have any questions or would like more information, please fill out the form below.</p>
+        <form id="contactForm" onsubmit="return validateForm()" class="needs-validation">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                <small id="nameError" class="text-danger"></small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                <small id="emailError" class="text-danger"></small>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" class="form-control" placeholder="Enter your message" rows="4" required></textarea>
+                <small id="messageError" class="text-danger"></small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="container bg-dark text-white text-center py-4 mt-5">
+        <p>&copy; 2024 Personal Organizer Website. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:support@organizer.com" class="text-white">support@organizer.com</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript Form Validation -->
+    <script>
+        function validateForm() {
+            // Clear previous error messages
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("messageError").textContent = "";
+
+            // Get form values
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            
+            let isValid = true;
+
+            // Validate name
+            if (name.length < 3) {
+                document.getElementById("nameError").textContent = "Name must be at least 3 characters.";
+                isValid = false;
+            }
+
+            // Validate email (simple regex for demonstration)
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            // Validate message
+            if (message.length < 10) {
+                document.getElementById("messageError").textContent = "Message must be at least 10 characters.";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

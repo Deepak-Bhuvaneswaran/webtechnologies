@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Organizer Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        #dynamic-time {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: darkblue;
+        }
+
+        .hover-text {
+            font-size: 1.2em;
+            display: none;
+            margin-top: 10px;
+            color: darkgreen;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: auto;
+        }
+
+        .hover-text-active {
+            display: block;
+        }
+
+        #text-hover {
+            font-size: 1.2em;
+            color: darkred;
+        }
+
+        #background-button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            background-color: lightblue;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #background-button:hover {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Time -->
+    <div>
+        <h1>Welcome to Personal Organizer Website</h1>
+        <p id="dynamic-time">Loading current time...</p>
+    </div>
+
+    <!-- Hover to Display Text -->
+    <div class="image-container">
+        <img src="wtl1.png" alt="Organizer Tools" id="hover-image">
+        <p class="hover-text" id="hover-text">These are your tools to stay productive!</p>
+    </div>
+
+    <!-- Change Background Color -->
+    <div>
+        <button id="background-button">Click to Change Background Color</button>
+    </div>
+
+    <!-- Change Text on Hover -->
+    <div>
+        <p id="text-hover">Hover over this text to see the magic!</p>
+    </div>
+
+    <script>
+        // 1. Dynamic Time Display
+        function updateTime() {
+            const timeElement = document.getElementById('dynamic-time');
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            timeElement.textContent = `Current Time: ${timeString}`;
+        }
+        setInterval(updateTime, 1000);
+
+        // 2. Display Text When an Image is Hovered
+        const hoverImage = document.getElementById('hover-image');
+        const hoverText = document.getElementById('hover-text');
+        hoverImage.addEventListener('mouseenter', () => {
+            hoverText.classList.add('hover-text-active');
+        });
+        hoverImage.addEventListener('mouseleave', () => {
+            hoverText.classList.remove('hover-text-active');
+        });
+
+        // 3. Change Background Color on Button Click
+        const backgroundButton = document.getElementById('background-button');
+        backgroundButton.addEventListener('click', () => {
+            const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+            document.body.style.backgroundColor = randomColor;
+        });
+
+        // 4. Change Text When Hovered
+        const textHover = document.getElementById('text-hover');
+        textHover.addEventListener('mouseenter', () => {
+            textHover.textContent = "You're hovering over the text!";
+        });
+        textHover.addEventListener('mouseleave', () => {
+            textHover.textContent = "Hover over this text to see the magic!";
+        });
+    </script>
+</body>
+</html>
