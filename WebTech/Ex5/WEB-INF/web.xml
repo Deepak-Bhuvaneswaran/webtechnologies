@@ -1,0 +1,28 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0">
+    <servlet>
+        <servlet-name>TaskServlet</servlet-name>
+        <servlet-class>Ex5.TaskServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TaskServlet</servlet-name>
+        <url-pattern>/tasks</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReminderServlet</servlet-name>
+        <servlet-class>Ex5.ReminderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReminderServlet</servlet-name>
+        <url-pattern>/reminders</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuickNotesServlet</servlet-name>
+        <servlet-class>Ex5.QuickNotesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuickNotesServlet</servlet-name>
+        <url-pattern>/quick-notes</url-pattern>
+    </servlet-mapping>
+</web-app>
